@@ -15,8 +15,8 @@ import About from './MyComponents/About';
 
 function App() {
 
-  let initialtodos = "";
-  if (localStorage.getItem("todos") === "null") {
+  let initialtodos;
+  if (localStorage.getItem("todos") === null) {
     initialtodos = [];
 
   }
@@ -24,6 +24,8 @@ function App() {
     initialtodos = JSON.parse(localStorage.getItem("todos"));
   }
 
+
+  
   const onDelete = (todo) => {
     console.log("hi i am deleted", todo);
     /*console.log("all items before delete",todos);
@@ -43,7 +45,7 @@ function App() {
   const addTodosingleitem = (title, desc) => {
     console.log("todo item is going to add", title, desc);
     let sno = 0;
-    if (todos.length == 0) {
+    if (todos.length === 0) {
       sno = 0;
     }
     else {
